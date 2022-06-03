@@ -39,6 +39,9 @@ class RangeValidator {
   validate(number) {
     if (number < this.from || number > this.to) {
       throw new Error("range NOT includes your number");
+    }
+    else if ((number === "" || number === undefined)) {
+      throw new Error("type a number, not empty string");
     } else {
       return `range includes ${number}`;
     }
